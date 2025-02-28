@@ -1,5 +1,4 @@
 # git-practice-collabo
 
 최가은
-
-local에서 수정
+-> 웹페이지에서 수정
