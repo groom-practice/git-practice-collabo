@@ -1,3 +1,5 @@
 # git-practice-collabo
 
-정지윤 수정사항 추가
+정지윤
+
+git 자체에서 수정하기
