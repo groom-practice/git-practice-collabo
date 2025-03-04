@@ -1,5 +1,2 @@
 # git-practice-collabo
-
-정지윤
-
-git 자체에서 수정하기
+## 3월 4일 git push 
