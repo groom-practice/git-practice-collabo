@@ -1,0 +1,26 @@
+body{
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  background-color: rgb(236, 236, 187);
+}
+
+h2 > span{
+  color: red;
+}
+
+img{
+  width: 300px;
+  float: left;
+  padding-right: 30px;
+}
+
+input:checked + span{
+  color:rgb(138, 204, 39);
+}
+
+
+
+
+
+
+
