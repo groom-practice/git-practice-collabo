@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+
+    <script>
+      // 여러 이벤트에 실행할 코드가 전부 같아서 동시에 작성해줍니다.
+      input.oncut =
+        input.oncopy =
+        input.onpaste =
+          function (event) {
+            alert(event.type + " - " + event.target.value);
+            return false;
+          };
+    </script>
+  </body>
+</html>

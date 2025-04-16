@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Simple Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #58666e;
+        background-color: #f0f3f4;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      /* 15번. heading tag 크기가 위치한 영역에 따라 다른 것을 방지하기 위해 reset css 추가 */
+      h1 {
+        font-size: 1.8em;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 10px 5px;
+      }
+
+      /* 1번. header 요소 영역 잡아주기 */
+      header {
+        /* 9번. navigation bar 상단 고정 -> 스크롤 해도 고정 */
+        position: fixed;
+        top: 0;
+
+        width: 100%;
+        height: 60px;
+        z-index: 2000;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+      }
+      /* 2번. navigation bar 우측 정렬 */
+      nav {
+        float: right;
+      }
+      /* 3번. logo image 수직으로 중앙 정렬하기 */
+      .logo {
+        display: inline-block;
+        height: 36px;
+        margin: 12px 0 12px 25px;
+      }
+      /* 3-1번. img 태그에 부여한 height 어트리뷰트를 css 로 옮기기 */
+      .logo > img {
+        height: 36px;
+      }
+      /* 4번. navigation bar 를 수평 정렬한다 */
+      .nav-items > li {
+        display: inline-block;
+      }
+      /* 5번. navigationbar를 수직정렬하기 위해 텍스트 높이를 header height과 동일하게 만든다 */
+      .nav-items > li > a {
+        line-height: 60px;
+        padding: 0 30px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      /* 6번. navigation bar hover 기능 추가로 색상 변경 */
+      .nav-items > li > a:hover {
+        color: rgba(0, 0, 0, 0.8);
+      }
+      /* 7번. aside 좌측 정렬, section 우측 정렬 */
+      aside {
+        /* float: left;
+        width: 20%; */
+        /* 11번. float 지우고 aside도 좌측 고정 */
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+
+        /* 12번. aside 배격색 바꾸고 style 지정 */
+        padding-top: 25px;
+        background-color: #333;
+      }
+
+      /* 13번. aside navigation style 지정 */
+      aside > ul {
+        width: 200px;
+      }
+      aside > ul > li > a {
+        display: block;
+        color: #fff;
+        padding: 10px 0 10px 20px;
+      }
+      aside > ul > li > a.active {
+        background-color: #4caf50;
+      }
+      aside > ul > li > a:hover:not(.active) {
+        background-color: #555;
+      }
+      aside > h1 {
+        padding: 20px 0 20px 20px;
+        color: #fff;
+      }
+      /* 14번 article style 지정 */
+      article {
+        margin: 10px;
+        padding: 25px;
+        background-color: white;
+      }
+      section {
+        float: right;
+
+        /* 11-1. 위 width 값 지우고 aside 만큼 margin left */
+        margin-left: 200px;
+      }
+
+      /* 8번. clearfix */
+      #content-wrap:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /* 10번. contents 영역이 header와 겹치므로 header height 만큼 끌어내리기 */
+      #wrap {
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <a class="logo" href="#home">
+          <img src="https://poiemaweb.com/img/logo.png" height="36px" />
+        </a>
+        <nav>
+          <ul class="nav-items">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="content-wrap">
+        <aside>
+          <h1>Aside</h1>
+          <ul>
+            <li><a href="#" class="active">London</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Tokyo</a></li>
+            <li><a href="#">Newyork</a></li>
+          </ul>
+        </aside>
+        <section>
+          <article id="london">
+            <h1>London</h1>
+            <p>
+              Lorem Ipsum dolor sit anet, consecterur adipisicing elit, sed do
+              elusmod tempor incididunt ut labore el dolore magna aliqua, Ut
+              enimi ad irinim veniam, quis nostrud exercitation ullarco laboris
+              nisi ut aliquip ex ea commado consequat. Duis aute inure delar in
+              reprehenderit in voluptate velit essa cillum dolare eu tugial
+              nulla pariatur Excepteur sint accaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </article>
+          <article id="paris">
+            <h1>Paris</h1>
+            <p>
+              Lorem Ipsum dolor sit anet, consecterur adipisicing elit, sed do
+              elusmod tempor incididunt ut labore el dolore magna aliqua, Ut
+              enimi ad irinim veniam, quis nostrud exercitation ullarco laboris
+              nisi ut aliquip ex ea commado consequat. Duis aute inure delar in
+              reprehenderit in voluptate velit essa cillum dolare eu tugial
+              nulla pariatur Excepteur sint accaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </article>
+          <article id="tokyo">
+            <h1>Tokyo</h1>
+            <p>
+              Lorem Ipsum dolor sit anet, consecterur adipisicing elit, sed do
+              elusmod tempor incididunt ut labore el dolore magna aliqua, Ut
+              enimi ad irinim veniam, quis nostrud exercitation ullarco laboris
+              nisi ut aliquip ex ea commado consequat. Duis aute inure delar in
+              reprehenderit in voluptate velit essa cillum dolare eu tugial
+              nulla pariatur Excepteur sint accaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </article>
+          <article id="newyork">
+            <h1>Newyork</h1>
+            <p>
+              Lorem Ipsum dolor sit anet, consecterur adipisicing elit, sed do
+              elusmod tempor incididunt ut labore el dolore magna aliqua, Ut
+              enimi ad irinim veniam, quis nostrud exercitation ullarco laboris
+              nisi ut aliquip ex ea commado consequat. Duis aute inure delar in
+              reprehenderit in voluptate velit essa cillum dolare eu tugial
+              nulla pariatur Excepteur sint accaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </article>
+        </section>
+        <!-- end of content-wrap   -->
+      </div>
+    </div>
+  </body>
+</html>

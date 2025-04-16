@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation Observer Example</title>
+  <style>
+    #observed {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 20px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="observed">Watch me change!</div>
+  <button id="changeButton">Change Content</button>
+
+  <script>
+    // 'observed'라는 id를 가진 요소를 선택하여 targetNode 변수에 저장
+    const targetNode = document.getElementById('observed');
+    // 'changeButton'이라는 id를 가진 버튼 요소를 선택하여 changeButton 변수에 저장
+    const changeButton = document.getElementById('changeButton');
+
+    // MutationObserver가 감지할 변경 사항을 설정 (속성, 자식 노드, 서브트리 변경 감지)
+    const config = { attributes: true, childList: true, subtree: true };
+
+    // 변경 사항이 발생했을 때 호출될 콜백 함수 정의
+    const callback = function(mutationsList, observer) {
+      // 변경 사항 목록을 순회하며 각 변경 사항에 대해 처리
+      for(let mutation of mutationsList) {
+        // 자식 노드가 추가되거나 제거된 경우
+        if (mutation.type === 'childList') {
+          alert('A child node has been added or removed.');
+        }
+        // 속성이 변경된 경우
+        else if (mutation.type === 'attributes') {
+          alert('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+      }
+    };
+
+    // MutationObserver 인스턴스를 생성하고 콜백 함수를 전달
+    const observer = new MutationObserver(callback);
+
+    // targetNode에 대해 설정된 config 옵션으로 MutationObserver를 시작
+    observer.observe(targetNode, config);
+
+    // changeButton 클릭 시 실행될 이벤트 리스너 추가
+    changeButton.addEventListener('click', () => {
+      // targetNode의 텍스트 내용을 변경
+      targetNode.textContent = "Content has been changed!";
+      // targetNode의 배경색을 변경
+      targetNode.style.backgroundColor = "lightcoral";
+    });
+  </script>
+</body>
+</html></html>

@@ -1,9 +1,50 @@
 # git-practice-collabo
 
-내 브런치 만들기
+# title1
 
-<span>1</span>
-<span>2</span>
-<span>3</span>
+## title2
 
-수업 따라가보기...
+### title3
+
+_italic_
+_이렇게 치면 이탈릭체_
+
+**Bold**
+**Bold**
+
+~~취소선~~
+<u>underline</u>
+
+<ol>
+    <li>123</li>
+    <li>123</li>
+</ol>
+
+```html
+<a href="https://www.google.co.kr/" target="_blank">GOOGLE</a>
+```
+
+```css
+.list > li {
+  position: absolute;
+  top: 40px;
+}
+```
+
+```javascript
+function add(a, b = 1) {
+  console.log(a, b);
+  return a + b;
+}
+```
+
+| 헤더 | 헤더 | 헤더 |
+| ---- | ---- | ---- |
+| 셀   | 셀   | 셀   |
+| 셀   | 셀   | 셀   |
+
+> 인용문
+
+---
+
+아 아 아 아 <br>
